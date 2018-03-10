@@ -20,15 +20,12 @@ h1 {
 
 }
 
-th {
+footer {
+  margin-top: 50px;
+  padding: 7px 0 3px;
+  border-top: 1px solid #5FD3D4;
+  text-align: center;
 }
-
-td {
-}
-
-tr {
-}
-
 
 ul {
   list-style: none;
