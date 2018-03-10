@@ -1,0 +1,321 @@
+* {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+body {
+  background-color: #fff; /* #214f73;  /* blue*/
+}
+
+header {
+  border-bottom: 1px solid #5FD3D4; /* light blue */
+  margin-bottom: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 4vw;
+  font-weight: 400;
+  margin-top: auto;
+  margin-bottom: 10px;
+
+}
+
+th {
+}
+
+td {
+}
+
+tr {
+}
+
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+  text-align: center;
+  padding: 1em 1em;
+  width: auto;
+}
+
+li {
+  display: inline-block;
+  cursor: pointer;
+  height: 25px;
+  width: 28px;
+  border-radius: 50%;
+  background-color: #214f73;
+  color: #fff;
+  text-align: center;
+  margin-right: 2px;
+  padding-top: 3px;
+  transition-duration: 0.3s;
+  border: none;
+}
+
+li:hover {
+  background-color: #67cee5; /*#459E48; /* darker green */
+}
+
+.active-fag {
+  padding-left: 20px;
+}
+
+.div-fellesfag {
+  padding: 1em 1.5em;
+  margin-top: 0;
+  display: inline-block;
+  float: left;
+}
+
+.div-programfag {
+  padding: 1em 1.5em;
+  display: inline-block;
+}
+
+.table-fellesfag, .table-programfag, th {
+  padding: 2em;
+}
+
+.table-fellesfag, .table-programfag {
+  table-layout: auto;
+  width: 100%;
+}
+
+.table, th, td {
+  border-bottom: 1.5px solid #67cee5;
+  border-collapse: collapse;
+}
+
+.table {
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.programfag-head {
+  max-width: 170.667px;
+  min-width: 100.667px;
+}
+
+.x-btn {
+  cursor: pointer;
+  padding: 0 1em 0 1em;
+  color: #214f73;
+}
+
+.x-btn:hover {
+  opacity: 0.6;
+}
+
+.grade-col .eksamen-col {
+  padding-right: 100px;
+  width: 300px;
+}
+
+.grade-active {
+  background-color: #67cee5;
+}
+
+/* Does nothing */
+.karakter .eksamen-top {
+  padding-left: 20px;
+}
+
+.average-view {
+  font-size: 1.5em;
+  line-height: 1.25em;
+  display: inline-block;
+  position: sticky;
+  top: 40px;
+  /* right: 40px; */
+  margin-left: 30px;
+  margin-top: 15px;
+  float: left ;
+  width: 30%;
+  min-width: 20%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 1em;
+
+}
+
+@media (max-width:800px) {
+  .average-view {
+    font-size: 1.5em;
+    line-height: 1.25em;
+    display: block;
+    margin-left: 30px;
+    margin-top: 65px;;
+    width: 30%; /*The width is 100%, when the viewport is 800px or smaller */
+
+  }
+}
+.table-tall {
+  max-width: 20%;
+  /* background-color: #4CAF50; /* green */ */
+  padding: 1em 2em 0 1em;
+
+}
+
+.table-tall, .fg-vitnemal, .gj-snitt, .tilleggspoeng, .konkurransePoeng {
+  border-bottom: 1.5px solid #67cee5;
+  border-collapse: collapse;
+}
+
+
+td.avg {
+  /* font-size: 1.4em; */
+  padding-right: 1em;
+  padding-top: 20px;
+
+  border: none;
+}
+
+td.big-row {
+  padding: 0.55em 0.25em 0 0;
+  font-size: 30px;
+  border: none;
+
+}
+
+.big-num {
+  font-size: 2em;
+  text-align: right;
+  /* padding-top: 0.75em; */
+  font-weight: 900;
+  border: none;
+
+}
+
+td.num {
+  text-align: center;
+  /* padding-top: 0.75em; */
+  /* padding-right: 0.25em; */
+  border: none;
+}
+
+.plus {
+  font-weight: bold;
+  border: none;
+
+}
+
+.add {
+  font-size: 20px;
+  border: none;
+}
+
+.par {
+  padding-top: 0;
+  border-bottom: none;
+}
+
+#ordinar-par {
+  padding-bottom: 0;
+  border-bottom: 2px solid #fff;
+}
+
+.more-fag {
+  overflow: hidden;
+  margin-top: 50px;
+  margin-bottom: 70px;
+
+}
+
+.sso-sel {
+  float: left;
+  margin-right: 50px;
+}
+
+.realfag-sel {
+  float: left;
+  margin-right: 50px;
+}
+
+.fellesfag-sel {
+  float: left;
+}
+
+.alderspoeng-div {
+  margin-bottom: 70px;
+}
+
+
+/* selectors */
+.more-fag {
+  width: 65%;
+}
+
+select {
+  /* background-color: #4CAF50; /* green */ */
+  padding: 7px 5px 7px 0;
+  font-size: 15px;
+}
+
+/* selector titles */
+.sso-sel, .realfag-sel, .fellesfag-sel {
+  width: 27%;
+  font-weight: 400;
+}
+
+/* selectors */
+.fag-selection-sso, .fag-selection-realfag, .fag-selection-fellesfag {
+  width: 100%;
+  padding: 7px 5px 7px 0;
+  border: 1px solid #67cee5;
+
+}
+
+.alderspoeng-sel {
+  width: 30%;
+  padding: 7px 5px 7px 0;
+  font-size: 15px;
+  border: 1px solid #67cee5;
+
+}
+
+/* content */
+option {
+  padding: 4em 0.75em 1em 0.75em;
+  height: 1em;
+  margin: 3em;
+  font-size: 16px;
+}
+
+
+/* checkboxes */
+.checkbox-tilleggspoeng, input {
+}
+
+.regular-checkbox {
+  -webkit-appearance: none;
+  background-color: #fff;
+  border: 1px solid #67cee5;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+  padding: 7px;
+  border-radius: 3px;
+  display: inline-block;
+  position: relative;
+  margin-top: 20px;
+  margin-right: 5px;
+}
+
+.regular-checkbox:active, .regular-checkbox:checked:active {
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+.regular-checkbox:checked {
+	background-color: #214f73;
+	border: 1px solid #adb8c0;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+	color: #214f73;
+}
+
+.regular-checkbox:checked:after {
+	content: '\2714';
+	font-size: 14px;
+	position: absolute;
+	top: -3px;
+	left: 2.5px;
+	color: #99a1a7;
+}

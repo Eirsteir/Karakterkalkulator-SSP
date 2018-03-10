@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Karakterkalkulatoren</title>
+  <meta charset='utf-8'/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' type='text/css' href='css/styles.css'/>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,900" rel="stylesheet">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  <!-- cookie <script>
+  function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+  function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+  }
+
+  function checkCookie() {
+    var user = getCookie("username");
+    if (user != "") {
+        alert("Welcome again " + user);
+    } else {
+        user = prompt("Please enter your name:", "");
+        if (user != "" && user != null) {
+            setCookie("username", user, 365);
+        }
+    }
+  }
+  </script> -->
+  <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.3.1/scrollreveal.min.js"></script>
+  <script>
+      window.sr = ScrollReveal();
+
+      // Add class to <html> if ScrollReveal is supported
+      // Note: this method is deprecated, and only works in version 3
+      if (sr.isSupported()) {
+        document.documentElement.classList.add('sr');
+      }
+    </script>
+    <style>
+      /* Ensure elements load hidden before ScrollReveal runs */
+      body { visibility: hidden; }
+      .div-programfag { visibility: visible;}
+    </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Karakterkalkulatoren</h1>
+  </header>
+
+  <div class='scroll total-table div-fellesfag'>
+    <table class='table table-fellesfag'>
+        <tr class='head-of-table'>
+          <th class='fellesfag'>Fellesfag</th>
+          <th class='karakter'>Karakter</th>
+          <th class='eksamen-top'>Eksamen</th>
+          <th style='font-size:13px;'>Fjern fag</th>
+        </tr>
+
+
+      </table>
+  </div>
+
+  <div class='scroll average-view'>
+    <table class='table-tall'>
+        <tr class='gj-snitt'>
+          <td class='avg big-row'>Gjennomsnitt</td>
+          <td style='border:none;'></td>
+          <td class='gj-snitt-val big-num'>0</td>
+        </tr>
+        <tr class='SRPoeng'>
+          <td class='avg add'>Språks- og realfagspoeng</td>
+          <td class='plus avg'>+</td>
+          <td class='SRPoeng-val num'>0</td>
+        </tr>
+        <tr class='fg-vitnemal'>
+          <td class='avg big-row'>Skolepoeng</td>
+          <td style='border:none;'></td>
+          <td class='fg-vitnemal-val big-num'>0</td>
+        </tr>
+        <tr class='par-fg-vitnemal'>
+          <td style='font-size:12px;' class='par'>(Førstegangsvitnemål)</td>
+        </tr>
+        <tr class='alderspoeng'>
+          <td class='avg add'>Alderspoeng</td>
+          <td class='plus avg'>+</td>
+          <td class='alderspoeng-val num'>0</td>
+
+        </tr>
+        <tr class='tilleggspoeng'>
+          <td class='avg add'>Tilleggspoeng</td>
+          <td class='plus avg'>+</td>
+          <td class='tilleggspoeng-val num'>0</td>
+
+        </tr>
+        <tr class='konkurransePoeng'>
+          <td class='avg big-row'>Konkurransepoeng</td>
+          <td style='border:none;'></td>
+          <td class='konkurransePoeng-val big-num'>0</td>
+        </tr>
+        <tr class='ordinær-kvote'>
+          <td style='font-size:12px;' class='par' id='ordinar-par'>(Ordinær kvote)</td>
+        </tr>
+      </table>
+  </div>
+
+
+  <div class='total-table div-programfag'>
+    <table class='table table-programfag'>
+        <tr class='head-of-table head-pg'>
+          <th class='programfag-head'>Programfag</th>
+          <th class='karakter'>Karakter</th>
+          <th class='eksamen-top'>Eksamen</th>
+          <th style='font-size:13px;'>Fjern fag</th>
+        </tr>
+        <tr class='row row-hidden' style='visibility:hidden;'>
+          <td class='active-fag'>WÆ</td>
+          <td class='grade-col'>
+            <ul class='grade'>
+              <li value='1'>1</li>
+              <li value='2'>2</li>
+              <li value='3'>3</li>
+              <li value='4'>4</li>
+              <li value='5'>5</li>
+              <li value='6'>6</li>
+            </ul>
+          </td>
+          <td class='eksamen-col'>
+            <ul class='eksamen'>
+              <li value='1'>1</li>
+              <li value='2'>2</li>
+              <li value='3'>3</li>
+              <li value='4'>4</li>
+              <li value='5'>5</li>
+              <li value='6'>6</li>
+            </ul>
+          </td>
+          <td class='remove-btn'>
+            <i class="fas fa-times fa-2x x-btn"></i>
+          </td>
+        </tr>
+
+      </table>
+  </div>
+
+
+  <div class='more-fag'>
+    <h2>Legg til fag</h2>
+
+    <div class='sso-sel'>
+      <!-- <h4>SSØ</h4> -->
+      <p>Språk, samfunnsfag og økonomi</p>
+      <select class='fag-selection-sso' name='Legg til fag'>
+        <option disabled selected>Velg fag</option>
+        <option class='add-fag' id='sso-fag' value='0' type='programfag'>Rettslære 1</option>
+        <option class='add-fag' id='sso-fag' value='0' type='programfag'>Rettslære 2</option>
+        <option class='add-fag' id='sso-fag' value='0' type='programfag'>Økonomistyring</option>
+        <option class='add-fag' id='sso-fag' value='0' type='programfag'>Økonomi og ledelse</option>
+        <option class='add-fag' id='sso-fag' value='0' type='programfag'>Internasjonal engelsk, skriftlig</option>
+        <option class='add-fag' id='sso-fag' value='0' type='programfag'>Internasjonal engelsk, muntlig</option>
+        <option class='add-fag' id='sso-fag' value='1' type='programfag'>Spansk nivå III, skriftlig</option>
+        <option class='add-fag' id='sso-fag' value='0' type='programfag'>Spansk nivå III, muntlig</option>
+        <option class='add-fag' id='sso-fag' value='0' type='programfag'>Samfunnsøkonomi 1</option>
+        <option class='add-fag' id='sso-fag' value='0' type='programfag'>Samfunnsøkonomi 2</option>
+        <option class='add-fag' id='sso-fag' value='0' type='programfag'>Historie og filosofi 1</option>
+        <option class='add-fag' id='sso-fag' value='0' type='programfag'>Historie og filosofi 2</option>
+      </select>
+    </div>
+
+    <div class='realfag-sel'>
+      <p>Realfag</p>
+      <select class='fag-selection-realfag' id='realfag' name='Legg til fag'>
+        <option disabled selected>Velg fag</option>
+        <option class='add-fag' id='realfag-fag' value='0.5' type='programfag'>Matematikk S1</option>
+        <option class='add-fag' id='realfag-fag' value='0.5' type='programfag'>Matematikk S2</option>
+        <option class='add-fag' id='realfag-fag' value='0.5' type='programfag'>Matematikk R1</option>
+        <option class='add-fag' id='realfag-fag' value='1' type='programfag'>Matematikk R2</option>
+      </select>
+    </div>
+
+    <div class='fellesfag-sel'>
+      <p>Fellesfag</p>
+      <select class='fag-selection-fellesfag' id='fellesfag' name='Legg til fag'>
+        <option disabled selected>Velg fag</option>
+      </select>
+    </div>
+  </div>
+
+  <div class='alderspoeng-div'>
+    <h2>Når er du født?</h2>
+    <select class='alderspoeng-sel'>
+      <option class='alderspoeng-opt' value='0'>2000</option>
+      <option class='alderspoeng-opt' value='0'>1999</option>
+      <option class='alderspoeng-opt' value='2'>1998</option>
+      <option class='alderspoeng-opt' value='4'>1997</option>
+      <option class='alderspoeng-opt' value='4'>1996</option>
+      <option class='alderspoeng-opt' value='4'>1995</option>
+    </select>
+  </div>
+
+  <div class='checkbox-tilleggspoeng'>
+    <h2>Tilleggspoeng</h2>
+    <input type='checkbox' class='regular-checkbox' value='2'/>Gjennomført førstegangsteneste <br>
+    <input type='checkbox' class='regular-checkbox' value='2'/>Godkjent år på folkehøgskole<br>
+    <input type='checkbox' class='regular-checkbox' value='2'/>60 studiepoeng fra høyere utdanning<br>
+    <input type='checkbox' class='regular-checkbox' value='1'/>30-59 studiepoeng fra høyere utdanning<br>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+  <script src='javascript\second.js'></script>
+  <script src='javascript\main.js'></script>
+</body>
+
+</html>
