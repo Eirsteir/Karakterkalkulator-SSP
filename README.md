@@ -9,4 +9,4 @@ Important:
 - If you press a grade, you can not remove the value unless you refresh the page.
 
 
-- The page does not have responsive design, yet. 
+Responsive design and converted tables to div incoming
