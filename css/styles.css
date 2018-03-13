@@ -2,8 +2,12 @@
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+html {
+  height: 100%;
+}
+
 body {
-  background-color: #fff; /* #214f73;  /* blue*/
+  background-color: #fff;
 }
 
 header {
@@ -13,11 +17,10 @@ header {
 
 h1 {
   text-align: center;
-  font-size: 4vw;
+  font-size: 5vw;
   font-weight: 400;
   margin-top: auto;
   margin-bottom: 10px;
-
 }
 
 footer {
@@ -25,7 +28,10 @@ footer {
   padding: 7px 0 3px;
   border-top: 1px solid #5FD3D4;
   text-align: center;
+  visibility: visible;
+
 }
+
 
 ul {
   list-style: none;
@@ -33,16 +39,16 @@ ul {
   justify-content: space-between;
   margin-top: 1em;
   text-align: center;
-  padding: 1em 1em;
-  width: auto;
+  padding: 1em 1.25em;
+  width:
 }
 
 li {
-  display: inline-block;
+  display: inline;
   cursor: pointer;
-  height: 25px;
-  width: 28px;
-  border-radius: 50%;
+  height: 100%;
+  width: 20px;
+  border-radius: 100%;
   background-color: #214f73;
   color: #fff;
   text-align: center;
@@ -53,46 +59,76 @@ li {
 }
 
 li:hover {
-  background-color: #67cee5; /*#459E48; /* darker green */
+  background-color: #67cee5;
 }
 
 .active-fag {
   padding-left: 20px;
+
 }
 
-.div-fellesfag {
-  padding: 1em 1.5em;
-  margin-top: 0;
+#average-view {
   display: inline-block;
-  float: left;
+  position: sticky;
+  top: 40px;
+  float: right;
+  /* border: 1px solid purple; */
+  width: 30%;
+  margin-right: 20px;
+  margin-top: 20px;
+
 }
 
-.div-programfag {
-  padding: 1em 1.5em;
-  display: inline-block;
-}
-
-.table-fellesfag, .table-programfag, th {
-  padding: 2em;
-}
-
-.table-fellesfag, .table-programfag {
-  table-layout: auto;
+#table-avg {
   width: 100%;
-}
-
-.table, th, td {
-  border-bottom: 1.5px solid #67cee5;
-  border-collapse: collapse;
-}
-
-.table {
+  padding: 2em;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
-.programfag-head {
-  max-width: 170.667px;
-  min-width: 100.667px;
+
+.div-fellesfag, .div-programfag {
+  padding: 1em;
+  margin-top: 0;
+  display: inline-block;
+  float: left;
+  /* border: 1px solid black; */
+  width: 60%;
+}
+
+/* DivTable.com */
+.divTable{
+	display: table;
+	width: 100%;
+  /* border: 1px solid red; */
+
+}
+
+.divTableRow {
+	display: table-row;
+  width: auto;
+}
+
+.divTableHead {
+	display: table-header-group;
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 1em;
+}
+
+
+.divTableCell, .divTableHead {
+	border-bottom: 1.5px solid #67cee5;
+	display: table-cell;
+  width: auto;
+}
+
+
+.divTableBody {
+	display: table-row-group;
+  border-bottom: 1.5px solid #67cee5;
+  border-collapse: collapse;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
 }
 
 .x-btn {
@@ -105,89 +141,40 @@ li:hover {
   opacity: 0.6;
 }
 
-.grade-col .eksamen-col {
-  padding-right: 100px;
-  width: 300px;
-}
 
 .grade-active {
   background-color: #67cee5;
 }
 
-/* Does nothing */
-.karakter .eksamen-top {
-  padding-left: 20px;
-}
 
-.average-view {
-  font-size: 1.5em;
-  line-height: 1.25em;
-  display: inline-block;
-  position: sticky;
-  top: 40px;
-  /* right: 40px; */
-  margin-left: 30px;
-  margin-top: 15px;
-  float: left ;
-  width: 30%;
-  min-width: 20%;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 1em;
+/* Average-view table */
 
-}
-
-@media (max-width:800px) {
-  .average-view {
-    font-size: 1.5em;
-    line-height: 1.25em;
-    display: block;
-    margin-left: 30px;
-    margin-top: 65px;;
-    width: 30%; /*The width is 100%, when the viewport is 800px or smaller */
-
-  }
-}
-.table-tall {
-  max-width: 20%;
-  /* background-color: #4CAF50; /* green */ */
-  padding: 1em 2em 0 1em;
-
-}
-
-.table-tall, .fg-vitnemal, .gj-snitt, .tilleggspoeng, .konkurransePoeng {
+#table-avg, .fg-vitnemal, .gj-snitt, .tilleggspoeng, .konkurransePoeng {
   border-bottom: 1.5px solid #67cee5;
   border-collapse: collapse;
 }
 
 
-td.avg {
-  /* font-size: 1.4em; */
-  padding-right: 1em;
+.avg {
   padding-top: 20px;
-
   border: none;
 }
 
-td.big-row {
-  padding: 0.55em 0.25em 0 0;
-  font-size: 30px;
+.big-row {
+  font-size: 2vw;
   border: none;
 
 }
 
 .big-num {
-  font-size: 2em;
+  font-size: 4vw;
   text-align: right;
-  /* padding-top: 0.75em; */
   font-weight: 900;
-  border: none;
 
 }
 
-td.num {
+.num {
   text-align: center;
-  /* padding-top: 0.75em; */
-  /* padding-right: 0.25em; */
   border: none;
 }
 
@@ -198,7 +185,7 @@ td.num {
 }
 
 .add {
-  font-size: 20px;
+  font-size: 1vw;
   border: none;
 }
 
@@ -207,11 +194,16 @@ td.num {
   border-bottom: none;
 }
 
-#ordinar-par {
+
+/* something isnt right with this one */
+.ordinær-kvote {
   padding-bottom: 0;
-  border-bottom: 2px solid #fff;
+  border-bottom: 3px solid #fff;
+  font-size: 12px;
 }
 
+
+/* selections */
 .more-fag {
   overflow: hidden;
   margin-top: 50px;
@@ -244,7 +236,6 @@ td.num {
 }
 
 select {
-  /* background-color: #4CAF50; /* green */ */
   padding: 7px 5px 7px 0;
   font-size: 15px;
 }
@@ -273,16 +264,12 @@ select {
 
 /* content */
 option {
-  padding: 4em 0.75em 1em 0.75em;
-  height: 1em;
-  margin: 3em;
   font-size: 16px;
 }
 
 
 /* checkboxes */
-.checkbox-tilleggspoeng, input {
-}
+
 
 .regular-checkbox {
   -webkit-appearance: none;
@@ -315,4 +302,113 @@ option {
 	top: -3px;
 	left: 2.5px;
 	color: #99a1a7;
+}
+
+
+.mobile-average {
+  visibility: none;
+}
+
+
+/* responsive */
+@media (max-width:850px) {
+
+  html {
+    height: auto !important;
+    padding-bottom: 20vh !important;
+  }
+
+  li {
+    height: 1.25vw;
+    width: 3vw;
+    padding-bottom: 9px;
+  }
+
+  #average-view {
+    display: none;
+  }
+
+  .div-fellesfag, .div-programfag, .divTable {
+    display: block;
+    float: none;
+    position: relative;
+    width: auto;
+    justify-content: center;
+    font-size: 2vw;
+  }
+
+  .more-fag {
+    width: 100%;
+    text-align: center;
+  }
+
+  .sso-sel {
+    width: 100%;
+
+  }
+
+  .fag-selection-sso, .fag-selection-realfag, .fag-selection-fellesfag {
+    width: auto;
+    padding: 7px 5px 7px 0;
+    border: 1px solid #67cee5;
+
+  }
+
+  .sso-sel, .realfag-sel, .fellesfag-sel {
+    width: 100%;
+    font-weight: 400;
+  }
+
+  .alderspoeng-div {
+    text-align: center;
+  }
+
+  .checkbox-tilleggspoeng {
+    text-align: center;
+  }
+
+  .mobile-average {
+    display: block;
+    visibility: visible;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #214f73;
+    z-index: 1;
+    height: 20%;
+    color: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05),
+                inset 0px -15px 10px -12px rgba(0,0,0,0.05),
+                inset 15px 10px -12px rgba(255,255,255,0.1);
+  }
+
+  .mobile-box {
+    display: inline-block;
+    margin: 0;
+    font-size: 3em;
+    height: 100%;
+    text-align: center;
+  }
+
+  .one {
+    float: left;
+    width: 50%;
+    border-right: 1px solid #67cee5;
+  }
+
+  .two {
+    float: right;
+    width: 49%;
+  }
+
+  #mobile-text {
+    font-size: 0.25em;
+    margin: 0;
+  }
+
+  .mobile-fg-vitnemal, .mobile-konkurransePoeng {
+    font-size: 1.75em;
+    margin-top: 0;
+  }
 }
