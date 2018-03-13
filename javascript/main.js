@@ -242,8 +242,7 @@ var main = function() {
     if ($currentFag !== $('.fag-selection-' + $currentFagID).text()) {
       let $fagValue = $currentFag.siblings()[0].attributes[2].value; // fagvalue
       let $fagName = $currentFag.siblings()[0].innerHTML; // fagName
-
-      let addNewFagHtml = '<option class=' + '"' + 'add-fag' + '"' + ' id=' + '"' + $currentFagID + '"' + ' value=' + '"' + $fagValue + '"' + 'type=' + '"' + $currentFagID + '"' + '>' + $fagName + '</option>';
+      let addNewFagHtml = '<option class="add-fag"' +  'id="' + $currentFagID + '" value="' + $fagValue + '" type="' + $currentFagID + '">' + $fagName + '</option>';
 
       $('.fag-selection-' + $currentFagID).append(addNewFagHtml);
     }
