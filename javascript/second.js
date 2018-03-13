@@ -54,6 +54,6 @@ var main = function() {
   sr.reveal('.mobile-average', mobileAverage);
   };
 
-});
+};
 
 $(document).ready(main);
