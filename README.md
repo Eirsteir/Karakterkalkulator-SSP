@@ -1,4 +1,7 @@
-# Steinbra99.github.io
+# Karakterkakulator
+(Norwegiand GPA-calculator)
+
+
 A calculator for high school students in Norway to calculate their average, points etc.
 
 Important: 
@@ -9,4 +12,4 @@ Important:
 - If you press a grade, you can not remove the value unless you refresh the page.
 
 
-Responsive design and converted tables to div incoming
+All clases have not yet been added
