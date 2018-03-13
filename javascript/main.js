@@ -2,8 +2,6 @@ var main = function() {
 
   const $grade = $('.grade').children();
   const $eksamen = $('.eksamen').children();
-  const $fag = $('.active-fag');
-  const $removeBtn = $('.remove-btn');
   let fag = { };
   let poeng = { };
   let alderspoeng = 0;
@@ -23,11 +21,11 @@ var main = function() {
     for (let p in poeng) {
       fgVitnemal += poeng[p];
       totalPoeng += poeng[p];
-    };
+    }
 
     if (tilleggspoeng > 2) {
       tilleggspoeng = 2;
-    };
+    }
 
     let konkurransePoeng = fgVitnemal + + alderspoeng + tilleggspoeng;
 
@@ -42,7 +40,7 @@ var main = function() {
     if ($(window).innerWidth() < 850) {
       $('.mobile-fg-vitnemal').replaceWith('<p class="mobile-fg-vitnemal">' + fgVitnemal.toFixed(1) + '</p>');
       $('.mobile-konkurransePoeng').replaceWith('<p class="mobile-konkurransePoeng">' + konkurransePoeng.toFixed(1) + '</p>');
-    };
+    }
   }
 
   $grade.on('click', event => {
@@ -67,10 +65,8 @@ var main = function() {
 
     let eksamenString = $(event.currentTarget).val();
     let parent = $(event.currentTarget).parentsUntil('tr').prev().prev();
-
     let currentEksamensFag = parent[0].innerHTML;
-    let fagPoeng = parent[0].attributes.value.value
-
+    
     fag[currentEksamensFag + '-eksamen'] = eksamenString;
 
     vitnemal(fag);
@@ -113,9 +109,7 @@ var main = function() {
 
       let eksamenString = $(event.currentTarget).val();
       let parent = $(event.currentTarget).parentsUntil('tr').prev().prev();
-
       let currentEksamensFag = parent[0].innerHTML;
-      let fagPoeng = parent[0].attributes.value.value
 
       fag[currentEksamensFag + '-eksamen'] = eksamenString;
 
@@ -147,7 +141,6 @@ var main = function() {
 
       let gradeString = $(event.currentTarget).val();
       let parent = $(event.currentTarget).parentsUntil('tr').prev();
-
       let currentFag = parent[0].innerHTML;
       let fagPoeng = Number(parent[0].attributes.value.value);
 
@@ -166,7 +159,6 @@ var main = function() {
       let parent = $(event.currentTarget).parentsUntil('tr').prev().prev();
 
       let currentEksamensFag = parent[0].innerHTML;
-      let fagPoeng = parent[0].attributes.value.value
 
       fag[currentEksamensFag + '-eksamen'] = eksamenString;
 
@@ -218,8 +210,7 @@ var main = function() {
       let parent = $(event.currentTarget).parentsUntil('tr').prev().prev();
 
       let currentEksamensFag = parent[0].innerHTML;
-      let fagPoeng = parent[0].attributes.value.value
-
+      
       fag[currentEksamensFag + '-eksamen'] = eksamenString;
 
       vitnemal(fag);
@@ -250,7 +241,7 @@ var main = function() {
 
 
   // Adds alderspoeng
-  $('.alderspoeng-sel').on('change', event => {
+  $('.alderspoeng-sel').on('change', function() => {
     // console.log($('.alderspoeng-sel>option:selected').text()) //make this the value of alderspoeng?
     alderspoeng = Number(($('.alderspoeng-sel>option:selected').val()));
 
@@ -267,7 +258,7 @@ var main = function() {
       tilleggspoeng = Number($('.checkbox-tilleggspoeng input[type=checkbox]:checked')[0].defaultValue); // gett the value of the one currently ckecked
     } else {
       tilleggspoeng = 0;
-    };
+    }
 
     vitnemal(fag);
   })
