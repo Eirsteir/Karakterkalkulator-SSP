@@ -241,8 +241,7 @@ var main = function() {
 
 
   // Adds alderspoeng
-  $('.alderspoeng-sel').on('change', function() => {
-    // console.log($('.alderspoeng-sel>option:selected').text()) //make this the value of alderspoeng?
+  $('.alderspoeng-sel').on('change', function() {
     alderspoeng = Number(($('.alderspoeng-sel>option:selected').val()));
 
     vitnemal(fag);
@@ -255,7 +254,7 @@ var main = function() {
     if ($('.checkbox-tilleggspoeng input[type=checkbox]:checked').length > 1) {
       tilleggspoeng = 2;
     } else if ($('.checkbox-tilleggspoeng input[type=checkbox]:checked').length === 1) {
-      tilleggspoeng = Number($('.checkbox-tilleggspoeng input[type=checkbox]:checked')[0].defaultValue); // gett the value of the one currently ckecked
+      tilleggspoeng = Number($('.checkbox-tilleggspoeng input[type=checkbox]:checked')[0].defaultValue); // get the value of the one currently ckecked
     } else {
       tilleggspoeng = 0;
     }
