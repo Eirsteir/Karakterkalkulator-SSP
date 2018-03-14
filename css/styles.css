@@ -472,4 +472,19 @@ option {
     margin-top: 0;
   }
 	
+  footer, p {
+    font-size: 1em;
+  }
+
+  .til-toppen {
+    font-size: 0.85em;
+  }
+	
+  .regular-checkbox:checked:after {
+    position: absolute;
+    top: -3px;
+    left: 1.5px;
+    color: #99a1a7;
+  }
+	
 }
