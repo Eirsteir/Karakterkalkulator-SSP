@@ -23,36 +23,84 @@ var main = function() {
 
 
   // revealing elements on scroll
+  var header = {
+    origin   : "top",
+    distance : "24px",
+    duration : 1500,
+    scale    : 1.05,
+  }
 
   var intro = {
-        origin   : "bottom",
-        distance : "64px",
-        duration : 800,
-        delay    : 1500,
-        scale    : 1,
+    origin   : "bottom",
+    distance : "64px",
+    duration : 900,
+    delay    : 1500,
+    scale    : 1,
+  }
+  var avg = {
+    origin   : "right",
+    distance : "100px",
+    duration : 800,
+    delay    : 1000,
+    scale    : 1,
+  };
+  var fellesfag = {
+    origin   : "bottom",
+    distance : "64px",
+    duration : 1000,
+    delay    : 100,
+    scale    : 1,
   };
   var select = {
     duration: 800,
   };
   var mobileAverage = {
-    origin : "left",
-    distance : "1000px",
+    origin : "bottom",
+    distance : "900px",
     duration: 1000,
-    delay : 500,
+    delay : 300,
     scale: 1,
   }
 
 
   window.sr = ScrollReveal();
-  sr.reveal('header', { duration : 1500, scale:0.8});
-  sr.reveal('.scroll', intro);
+  sr.reveal('.header', header);
+  sr.reveal('.intro', intro);
+  // sr.reveal('#average-view', avg )
+  // sr.reveal('.div-fellesfag', fellesfag)
   sr.reveal('.div-programfag', select);
   sr.reveal('.more-fag', select);
   sr.reveal('.alderspoeng-div', select);
   sr.reveal('.checkbox-tilleggspoeng', select);
-  if ($(window).innerWidth() < 850){
-  sr.reveal('.mobile-average', mobileAverage);
+
+  $.fn.isInViewport = function() {
+    var elementTop = $(this).offset().top;
+    var elementBottom = elementTop + $(this).outerHeight();
+
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+
+    return elementBottom > viewportTop && elementTop < viewportBottom;
   };
+
+  // reveals mobile average box when
+  $(window).on('resize scroll', function() {
+    if ($('.div-fellesfag').isInViewport() && $(window).innerWidth() < 850){
+      sr.reveal('.mobile-average', mobileAverage);
+    }
+  })
+
+  var topOfPage = {
+    scrollTop: $(".div-fellesfag").offset().top - 20
+  }
+
+  $('.arrow').on('click', function() {
+    $('html, body').animate(topOfPage, 1000);
+  })
+
+  $('.til-toppen').on('click', function() {
+    $('html, body').animate(topOfPage, 1000);
+  })
 
 };
 
