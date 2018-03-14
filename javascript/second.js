@@ -37,20 +37,6 @@ var main = function() {
     delay    : 1500,
     scale    : 1,
   }
-  var avg = {
-    origin   : "right",
-    distance : "100px",
-    duration : 800,
-    delay    : 1000,
-    scale    : 1,
-  };
-  var fellesfag = {
-    origin   : "bottom",
-    distance : "64px",
-    duration : 1000,
-    delay    : 100,
-    scale    : 1,
-  };
   var select = {
     duration: 800,
   };
