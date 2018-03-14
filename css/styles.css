@@ -357,7 +357,7 @@ option {
 
   .title {
     position: absolute;
-    top: 38.25vh;
+    top: 32.25vh;
     left: 50%;
     transform: translate(-50%, -50%);
     border-bottom: 1px solid #5FD3D4;
@@ -370,7 +370,7 @@ option {
 
   .intro {
     position: absolute;
-    top: 46.5%;
+    top: 40.5%;
     left: 25%;
     transform: translate(-50%, -50%);
     width: 50%;
