@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="no">
 
 <head>
   <title>Karakterkalkulatoren</title>
@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel='stylesheet' type='text/css' href='css/styles.css'/>
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,900" rel="stylesheet">
+  <link rel="icon" href="images/kk.png">
   <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
   <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.3.1/scrollreveal.min.js"></script>
   <script>
@@ -30,12 +31,13 @@
 
 <body>
 
-  <header>
-    <h1>Karakterkalkulatoren</h1>
-  </header>
+  <div class="header">
+    <h1 class="title">Kalkulatoren</h1>
+    <p class="intro">Studiespesialiserende</p>
+    <i class="fas fa-angle-down fa-3x arrow"></i>
+  </div>
 
-
-  <div class="scroll" id="average-view">
+  <aside class="" id="average-view">
     <div class="divTable" id="table-avg">
         <div class="divTableRow gj-snitt">
           <div class="divTableCell avg big-row">Gjennomsnitt</div>
@@ -74,11 +76,11 @@
           <div class="divTableCell par" id="ordinar-par">(Ordin&aelig;r kvote)</div>
         </div>
       </div>
-    </div>
+    </aside>
 
 
 
-  <div class='scroll total-table div-fellesfag'>
+  <div class='scroll total-table div-fellesfag' id="top">
     <div class="divTable ">
       <div class="divTableBody table table-fellesfag">
         <div class="divTableRow head-of-table">
@@ -220,8 +222,11 @@
     </div>
   </div>
 
-  <footer style="visibility:visible;">
+
+
+  <footer>
     <p>Made by Eirik Steira</p>
+    <p class="til-toppen">Til toppen</p>
   </footer>
 
 
@@ -230,6 +235,7 @@
       crossorigin="anonymous"></script>
   <script src='javascript\second.js'></script>
   <script src='javascript\main.js'></script>
+  <script src='javascript\functions.js'></script> 
 </body>
 
 </html>
