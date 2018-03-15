@@ -116,16 +116,13 @@ li:hover {
   margin-right: 20px;
   padding-top: 40px;
   visibility: visible;
-
 }
 
 #table-avg {
   width: 100%;
-  padding: 2em;
+  padding: 0;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-
 }
-
 
 .div-fellesfag, .div-programfag {
   padding: 40px 1em 1em 1em;
@@ -140,8 +137,6 @@ li:hover {
 .divTable{
 	display: table;
 	width: 100%;
-  /* border: 1px solid red; */
-
 }
 
 .divTableRow {
@@ -156,20 +151,17 @@ li:hover {
   padding: 1em;
 }
 
-
 .divTableCell, .divTableHead {
 	border-bottom: 1.5px solid #67cee5;
 	display: table-cell;
   width: auto;
 }
 
-
 .divTableBody {
 	display: table-row-group;
   border-bottom: 1.5px solid #67cee5;
   border-collapse: collapse;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-
 }
 
 /*  */
@@ -184,17 +176,18 @@ li:hover {
   opacity: 0.6;
 }
 
-
 .grade-active {
   background-color: #67cee5;
 }
 
-
 /* Average-view table */
-
 #table-avg, .fg-vitnemal, .gj-snitt, .tilleggspoeng, .konkurransePoeng {
   border-bottom: 1.5px solid #67cee5;
   border-collapse: collapse;
+}
+
+.SRPoeng-val {
+  text-align:center;
 }
 
 .avg {
@@ -221,10 +214,11 @@ li:hover {
 .plus {
   font-weight: bold;
   border: none;
+
 }
 
 .add {
-  font-size: 1vw;
+  font-size: 1.3vw;
   border: none;
 }
 
@@ -233,14 +227,12 @@ li:hover {
   border-bottom: none;
 }
 
-
 /* something isnt right with this one */
 .ordinær-kvote {
   padding-bottom: 0;
   border-bottom: 3px solid #fff;
   font-size: 12px;
 }
-
 
 /* selections */
 .more-fag {
@@ -267,7 +259,6 @@ li:hover {
   margin-bottom: 70px;
 }
 
-
 /* selectors */
 .more-fag {
   width: 65%;
@@ -289,7 +280,6 @@ select {
   width: 100%;
   padding: 7px 5px 7px 0;
   border: 1px solid #67cee5;
-
 }
 
 .alderspoeng-sel {
@@ -297,7 +287,6 @@ select {
   padding: 7px 5px 7px 0;
   font-size: 15px;
   border: 1px solid #67cee5;
-
 }
 
 /* content */
@@ -305,10 +294,7 @@ option {
   font-size: 16px;
 }
 
-
 /* checkboxes */
-
-
 .regular-checkbox {
   -webkit-appearance: none;
   background-color: #fff;
@@ -342,11 +328,9 @@ option {
 	color: #99a1a7;
 }
 
-
 .mobile-average {
   display: none;
 }
-
 
 /* responsive */
 @media (max-width:850px) {
@@ -356,7 +340,6 @@ option {
     padding-bottom: 20vh !important;
   }
 
-
   .header {
     margin-bottom: 20px;
     position: relative;
@@ -364,7 +347,6 @@ option {
     width: 100vw;
     border-bottom: 1px solid #5FD3D4;
   }
-
 
   .title {
     position: absolute;
@@ -377,7 +359,6 @@ option {
     text-align: center;
     font-size: 9vw;
     font-weight: 400;
-
   }
 
   .intro {
@@ -390,7 +371,6 @@ option {
     text-align: center;
     font-weight: 400;
     font-size: 4vw;
-
   }
 
   .arrow {
@@ -402,7 +382,7 @@ option {
   li {
     height: 1.25vw;
     width: 3vw;
-    padding-bottom: 9px;
+    padding-bottom: 2.5vw;
   }
 
   #average-view {
@@ -415,7 +395,7 @@ option {
     position: relative;
     width: auto;
     justify-content: center;
-    font-size: 2vw;
+    font-size: 2.8vw;
   }
 
   .more-fag {
@@ -432,7 +412,6 @@ option {
     width: auto;
     padding: 7px 5px 7px 0;
     border: 1px solid #67cee5;
-
   }
 
   .sso-sel, .realfag-sel, .fellesfag-sel {
@@ -456,11 +435,9 @@ option {
     width: 100%;
     background-color: #214f73;
     z-index: 1;
-    height: 20%;
+    height: 18%;
     color: #fff;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05),
-                inset 0px -15px 10px -12px rgba(0,0,0,0.05),
-                inset 15px 10px -12px rgba(255,255,255,0.1);
+    box-shadow: 0px 8px 16px 16px rgba(0,0,0,0.15);
   }
 
   .mobile-box {
@@ -483,7 +460,7 @@ option {
   }
 
   #mobile-text {
-    font-size: 0.25em;
+    font-size: 0.3em;
     margin: 0;
   }
 
@@ -506,5 +483,6 @@ option {
   	left: 1.5px;
   	color: #99a1a7;
   }
-	
+
 }
+
