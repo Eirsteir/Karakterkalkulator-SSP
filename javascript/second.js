@@ -1,4 +1,4 @@
-require(['jquery', 'app'], function($, App) {
+var second = function() {
 
   const tableHtml ='<div class="divTableRow"><div class="divTableCell active-fag" id="fellesfag" value="0">Engelsk</div><div class="divTableCell grade-col"><ul class="grade"><li value="1">1</li><li value="2">2</li><li value="3">3</li><li value="4">4</li><li value="5">5</li><li value="6">6</li></ul></div><div class="divTableCell eksamen-col"><ul class="eksamen"><li value="1">1</li><li value="2">2</li><li value="3">3</li><li value="4">4</li><li value="5">5</li><li value="6">6</li></ul></div><div class="divTableCell remove-btn"> <i class="fas fa-times fa-2x x-btn"></i> </div></div><div class="divTableRow"><div class="divTableCell active-fag" id="fellesfag" value="0">Geografi</div><div';
 
@@ -88,5 +88,6 @@ require(['jquery', 'app'], function($, App) {
     $('html, body').animate(topOfPage, 1000);
   })
 
-});
+};
 
+$(document).ready(second)
