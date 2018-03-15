@@ -108,7 +108,7 @@ App.alderspoeng = function() {
 
 App.tilleggsPoeng = function() {
   // adds points from tilleggspoeng checkbox
-  tilleggspoeng += Number(this.val());
+  tilleggspoeng += Number($(this).val());
 
   if ($('.checkbox-tilleggspoeng input[type=checkbox]:checked').length > 1) {
     tilleggspoeng = 2;
