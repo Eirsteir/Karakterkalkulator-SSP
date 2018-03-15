@@ -1,40 +1,42 @@
 
+ 
   var App = {}
 
   App.fag = { }
   App.poeng = { }
-  App.alderspoeng = 0;
-  App.tilleggspoeng = 0;
+  App.$Apoeng = 0;
+  App.$Tpoeng = 0;
 
   // functions/event handlers
   App.vitnemal = function() {
     let total = 0;
     let average = 0;
+    let fgVitnemal = 0;
+    let totalPoeng = 0;
     for (let enkeltFag in App.fag) {
       total += App.fag[enkeltFag];
       average = ((total / Object.keys(App.fag).length));
     }
 
-    let fgVitnemal = average*10;
-    let totalPoeng = 0;
+    fgVitnemal += average*10;
 
     for (let p in App.poeng) {
       fgVitnemal += App.poeng[p];
       totalPoeng += App.poeng[p];
     }
 
-    if (App.tilleggspoeng > 2) {
-      App.tilleggspoeng = 2;
+    if (App.$Tpoeng > 2) {
+      App.$Tpoeng = 2;
     }
 
-    let konkurransePoeng = fgVitnemal + App.alderspoeng + App.tilleggspoeng;
+    let konkurransePoeng = fgVitnemal + App.$Apoeng + App.$Tpoeng;
 
     $('div.gj-snitt-val').replaceWith('<div class="divTableCell gj-snitt-val big-num">' + (average*10).toFixed(1) + '</div>');
     $('div.SRPoeng-val').replaceWith('<div class="divTableCell SRPoeng-val" style="border:none;">' + totalPoeng + '</div>');
     $('div.fg-vitnemal-val').replaceWith('<div class="divTableCell fg-vitnemal-val big-num">' + fgVitnemal.toFixed(1) + '</div>');
-    $('div.alderspoeng-val').replaceWith('<div class="divTableCell alderspoeng-val num">' + App.alderspoeng + '</div>');
-    $('div.tilleggspoeng-val').replaceWith('<div class="divTableCell tilleggspoeng-val num">' + App.tilleggspoeng + '</div>');
-    $('div.konkurransePoeng-val').replaceWith('<div class="divTableCell konkurransePoeng-val big-num">' + (konkurransePoeng) + '</div>');
+    $('div.alderspoeng-val').replaceWith('<div class="divTableCell alderspoeng-val num">' + App.$Apoeng + '</div>');
+    $('div.tilleggspoeng-val').replaceWith('<div class="divTableCell tilleggspoeng-val num">' + App.$Tpoeng + '</div>');
+    $('div.konkurransePoeng-val').replaceWith('<div class="divTableCell konkurransePoeng-val big-num">' + konkurransePoeng.toFixed(1) + '</div>');
 
     // For smaller devices
     if ($(window).innerWidth() < 850) {
@@ -81,9 +83,10 @@
 
     let htmlNyttFagRow = '<div class="divTableRow"> <div class="divTableCell active-fag" id="' + $nyttFagId + '" value="' + $nyttFag.val() + '" type="' + $nyttFagType + '">' + $nyttFagText + '</div><div class="divTableCell grade-col"> <ul class="grade"> <li value="1">1</li><li value="2">2</li><li value="3">3</li><li value="4">4</li><li value="5">5</li><li value="6">6</li></ul> </div><div class="divTableCell eksamen-col"> <ul class="eksamen"> <li value="1">1</li><li value="2">2</li><li value="3">3</li><li value="4">4</li><li value="5">5</li><li value="6">6</li></ul> </div><div class="divTableCell remove-btn"><i class="fas fa-times fa-2x x-btn"></i> </div></div>';
 
-    $('.table-' + $selectValue).append(htmlNyttFagRow);
+    $('.table-' + $nyttFagType).append(htmlNyttFagRow);
 
-    $('.fag-selection-' + $selectvalue + '>option:selected').hide();
+    $('#hidden-fag').hide();
+    $('.fag-selection-' + $selectValue + '>option:selected').hide();
   };
 
   App.button = function() {
@@ -104,21 +107,23 @@
   };
 
   App.alderspoeng = function() {
-    let $poeng = Number(($('.alderspoeng-sel>option:selected').val()))
-    App.alderspoeng = $poeng;
+    App.$alderspoeng = Number(($('.alderspoeng-sel>option:selected').val()));
+
     App.vitnemal();
+
+    return App.$alderspoeng;
   };
 
   App.tilleggspoeng = function() {
     // adds points from tilleggspoeng checkbox
-    App.tilleggspoeng += Number($(this).val());
+    App.$tilleggspoeng += Number($(this).val());
 
     if ($('.checkbox-tilleggspoeng input[type=checkbox]:checked').length > 1) {
-      App.tilleggspoeng = 2;
+      App.$tilleggspoeng = 2;
     } else if ($('.checkbox-tilleggspoeng input[type=checkbox]:checked').length === 1) {
-      App.tilleggspoeng = Number($('.checkbox-tilleggspoeng input[type=checkbox]:checked')[0].defaultValue); // get the value of the one currently ckecked
+      App.$tilleggspoeng = Number($('.checkbox-tilleggspoeng input[type=checkbox]:checked')[0].defaultValue); // get the value of the one currently ckecked
     } else {
-      App.tilleggspoeng = 0;
+      App.$tilleggspoeng = 0;
     }
 
     App.vitnemal();
@@ -130,29 +135,20 @@ var main = function() {
   App.$grade = $('.grade').children();
   App.$eksamen = $('.eksamen').children();
   App.$removeBtn = $('.remove-btn').children();
-  App.$select = $('select');
+  App.$select = $('.select');
   App.$alderspoeng = $('.alderspoeng-sel');
   App.$tilleggspoeng = $('.checkbox-tilleggspoeng').children();
 
   App.$grade.on('click', App.grade)
-
   App.$eksamen.on('click', App.eksamensGrade)
-
-  // can you make a single event handler that handles all of the clases/fag? DAmn right I can
   // Adds new fag from selector -fellesfag
   App.$select.on('change', App.selectors)
-
-
-
   // clicks both at the same time
-  App.$removeBtn.on('click', /* '[data-fa-i2svg]'*/ App.button);
-
+  App.$removeBtn.on('click', App.button);
   // Adds alderspoeng
   App.$alderspoeng.on('change', App.alderspoeng)
-
   // adds points from tilleggspoeng checkbox
   App.$tilleggspoeng.on('change', App.tilleggspoeng)
-
 }
 
 $(document).ready(main);
