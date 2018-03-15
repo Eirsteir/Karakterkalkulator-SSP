@@ -1,5 +1,5 @@
 # Karakterkakulator
-(Norwegiand GPA-calculator)
+(Norwegian GPA-calculator)
 
 
 A calculator for high school students in Norway to calculate their average, points etc.
@@ -13,3 +13,4 @@ Important:
 
 
 All clases have not yet been added
+
