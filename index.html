@@ -12,21 +12,21 @@
   <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
   <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.3.1/scrollreveal.min.js"></script>
   <script>
-      window.sr = ScrollReveal();
+  window.sr = ScrollReveal();
 
-      // Add class to <html> if ScrollReveal is supported
-      // Note: this method is deprecated, and only works in version 3
-      if (sr.isSupported()) {
-        document.documentElement.classList.add('sr');
-      }
-    </script>
-    <style>
-      /* Ensure elements load hidden before ScrollReveal runs */
-      body { visibility: hidden; }
-      /* .div-programfag { visibility: visible;} */
-    </style>
-    <script>
-    FontAwesomeConfig = { autoReplaceSvg: 'nest' }
+  // Add class to <html> if ScrollReveal is supported
+  // Note: this method is deprecated, and only works in version 3
+  if (sr.isSupported()) {
+    document.documentElement.classList.add('sr');
+  }
+  </script>
+  <style>
+  /* Ensure elements load hidden before ScrollReveal runs */
+  body { visibility: hidden; }
+  /* .div-programfag { visibility: visible;} */
+  </style>
+  <script>
+  FontAwesomeConfig = { autoReplaceSvg: 'nest' }
   </script>
 </head>
 
@@ -40,44 +40,44 @@
 
   <aside class="" id="average-view">
     <div class="divTable" id="table-avg">
-        <div class="divTableRow gj-snitt">
-          <div class="divTableCell avg big-row">Gjennomsnitt</div>
-          <div class="divTableCell" style="border:none">&nbsp;</div>
-          <div class="divTableCell gj-snitt-val big-num">0</div>
-        </div>
-        <div class="divTableRow SRPoeng">
-          <div class="divTableCell avg add">Spr&aring;ks- og realfagspoeng</div>
-          <div class="divTableCell avg plus">+</div>
-          <div class="divTableCell SRPoeng-val num" style="border:none;">0</div>
-        </div>
-        <div class="divTableRow fg-vitnemal">
-          <div class="divTableCell avg big-row">Skolepoeng</div>
-          <div class="divTableCell" style="border:none;">&nbsp;</div>
-          <div class="divTableCell fg-vitnemal-val big-num">0</div>
-        </div>
-        <div class="divTableRow par-fg-vitnemal">
-          <div class="divTableCell par" style="font-size:12px;">(F&oslash;rstegangsvitnem&aring;l)</div>
-        </div>
-        <div class="divTableRow alderspoeng">
-          <div class="divTableCell avg add">Alderspoeng</div>
-          <div class="divTableCell avg plus">+</div>
-          <div class="divTableCell alderspoeng-val num">0</div>
-        </div>
-        <div class="divTableRow tilleggspoeng">
-          <div class="divTableCell avg big-row">Tilleggspoeng</div>
-          <div class="divTableCell avg plus">+</div>
-          <div class="divTableCell tilleggspoeng-val num">0</div>
-        </div>
-        <div class="divTableRow konkurransePoeng">
-          <div class="divTableCell avg big-row">Konkurransepoeng</div>
-          <div class="divTableCell" style="border:none;">&nbsp;</div>
-          <div class="divTableCell konkurransePoeng-val big-num">0</div>
-        </div>
-        <div class="divTableRow ordinær-kvote">
-          <div class="divTableCell par" id="ordinar-par">(Ordin&aelig;r kvote)</div>
-        </div>
+      <div class="divTableRow gj-snitt">
+        <div class="divTableCell avg big-row">Gjennomsnitt</div>
+        <div class="divTableCell" style="border:none">&nbsp;</div>
+        <div class="divTableCell gj-snitt-val big-num">0</div>
       </div>
-    </aside>
+      <div class="divTableRow SRPoeng">
+        <div class="divTableCell avg add">Spr&aring;ks- og realfagspoeng</div>
+        <div class="divTableCell avg plus">+</div>
+        <div class="divTableCell SRPoeng-val num" style="border:none;">0</div>
+      </div>
+      <div class="divTableRow fg-vitnemal">
+        <div class="divTableCell avg big-row">Skolepoeng</div>
+        <div class="divTableCell" style="border:none;">&nbsp;</div>
+        <div class="divTableCell fg-vitnemal-val big-num">0</div>
+      </div>
+      <div class="divTableRow par-fg-vitnemal">
+        <div class="divTableCell par" style="font-size:12px;">(F&oslash;rstegangsvitnem&aring;l)</div>
+      </div>
+      <div class="divTableRow alderspoeng">
+        <div class="divTableCell avg add">Alderspoeng</div>
+        <div class="divTableCell avg plus">+</div>
+        <div class="divTableCell alderspoeng-val num">0</div>
+      </div>
+      <div class="divTableRow tilleggspoeng">
+        <div class="divTableCell avg big-row">Tilleggspoeng</div>
+        <div class="divTableCell avg plus">+</div>
+        <div class="divTableCell tilleggspoeng-val num">0</div>
+      </div>
+      <div class="divTableRow konkurransePoeng">
+        <div class="divTableCell avg big-row">Konkurransepoeng</div>
+        <div class="divTableCell" style="border:none;">&nbsp;</div>
+        <div class="divTableCell konkurransePoeng-val big-num">0</div>
+      </div>
+      <div class="divTableRow ordinær-kvote">
+        <div class="divTableCell par" id="ordinar-par">(Ordin&aelig;r kvote)</div>
+      </div>
+    </div>
+  </aside>
 
 
 
@@ -99,73 +99,73 @@
 
   <div class="total-table div-programfag">
     <div class="divTable">
-    	<div class="divTableBody table table-programfag">
-      		<div class="divTableRow head-pg">
-      			<div class="divTableHead programfag-head">Programfag</div>
-      			<div class="divTableHead karakter">Karakter</div>
-      			<div class="divTableHead eksamen-top">Eksamen</div>
-      			<div class="divTableHead" style='font-size:13px;'>Fjern fag</div>
-      		</div>
-          <div class="divTableRow" id="hidden-fag" style="visibility:hidden;">
-           <div class="divTableCell active-fag" id="hidden-fag" value="0" type="programfag">Fremmedspråk nivå II</div>
-           <div class="divTableCell grade-col">
-              <ul class="grade">
-                 <li value="1">1</li>
-                 <li value="2">2</li>
-                 <li value="3">3</li>
-                 <li value="4">4</li>
-                 <li value="5">5</li>
-                 <li value="6">6</li>
-              </ul>
-           </div>
-           <div class="divTableCell eksamen-col">
-              <ul class="eksamen">
-                 <li value="1">1</li>
-                 <li value="2">2</li>
-                 <li value="3">3</li>
-                 <li value="4">4</li>
-                 <li value="5">5</li>
-                 <li value="6">6</li>
-              </ul>
-           </div>
-           <div class="divTableCell remove-btn">
-             <i class="fas fa-times fa-2x x-btn"></i>
-           </div>
+      <div class="divTableBody table table-programfag">
+        <div class="divTableRow head-pg">
+          <div class="divTableHead programfag-head">Programfag</div>
+          <div class="divTableHead karakter">Karakter</div>
+          <div class="divTableHead eksamen-top">Eksamen</div>
+          <div class="divTableHead" style='font-size:13px;'>Fjern fag</div>
         </div>
-      		</div>
-      	</div>
+        <div class="divTableRow" id="hidden-fag" style="visibility:hidden;">
+          <div class="divTableCell active-fag" id="hidden-fag" value="0" type="programfag">Fremmedspråk nivå II</div>
+          <div class="divTableCell grade-col">
+            <ul class="grade">
+              <li value="1">1</li>
+              <li value="2">2</li>
+              <li value="3">3</li>
+              <li value="4">4</li>
+              <li value="5">5</li>
+              <li value="6">6</li>
+            </ul>
+          </div>
+          <div class="divTableCell eksamen-col">
+            <ul class="eksamen">
+              <li value="1">1</li>
+              <li value="2">2</li>
+              <li value="3">3</li>
+              <li value="4">4</li>
+              <li value="5">5</li>
+              <li value="6">6</li>
+            </ul>
+          </div>
+          <div class="divTableCell remove-btn">
+            <i class="fas fa-times fa-2x x-btn"></i>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+</div>
 
-  <div class='more-fag'>
-    <h2>Legg til fag</h2>
+<div class='more-fag'>
+  <h2>Legg til fag</h2>
 
 
-    <div class='sso-sel'>
-      <!-- <h4>SSØ</h4> -->
-      <p>Språk, samfunnsfag og økonomi</p>
-      <select class='fag-selection-sso' id="sso" name='Legg til fag'>
-        <option id="first-velg-sso" disabled selected>Velg fag</option>
-        <option class='add-fag' id='sso' value='0' type='programfag'>Rettslære 1</option>
-        <option class='add-fag' id='sso' value='0' type='programfag'>Rettslære 2</option>
-        <option class='add-fag' id='sso' value='0' type='programfag'>Økonomistyring</option>
-        <option class='add-fag' id='sso' value='0' type='programfag'>Økonomi og ledelse</option>
-        <option class='add-fag' id='sso' value='0' type='programfag'>Internasjonal engelsk, skriftlig</option>
-        <option class='add-fag' id='sso' value='0' type='programfag'>Internasjonal engelsk, muntlig</option>
-        <option class='add-fag' id='sso' value='1' type='programfag'>Spansk nivå III, skriftlig</option>
-        <option class='add-fag' id='sso' value='0' type='programfag'>Spansk nivå III, muntlig</option>
-        <option class='add-fag' id='sso' value='0' type='programfag'>Samfunnsøkonomi 1</option>
-        <option class='add-fag' id='sso' value='0' type='programfag'>Samfunnsøkonomi 2</option>
-        <option class='add-fag' id='sso' value='0' type='programfag'>Historie og filosofi 1</option>
-        <option class='add-fag' id='sso' value='0' type='programfag'>Historie og filosofi 2</option>
-      </select>
-    </div>
+  <div class='sso-sel'>
+    <!-- <h4>SSØ</h4> -->
+    <p>Språk, samfunnsfag og økonomi</p>
+    <select class='fag-selection-sso' id="sso" name='Legg til fag'>
+      <option id="first-velg-sso" disabled selected>Velg fag</option>
+      <option class='add-fag' id='sso' value='0' type='programfag'>Rettslære 1</option>
+      <option class='add-fag' id='sso' value='0' type='programfag'>Rettslære 2</option>
+      <option class='add-fag' id='sso' value='0' type='programfag'>Økonomistyring</option>
+      <option class='add-fag' id='sso' value='0' type='programfag'>Økonomi og ledelse</option>
+      <option class='add-fag' id='sso' value='0' type='programfag'>Internasjonal engelsk, skriftlig</option>
+      <option class='add-fag' id='sso' value='0' type='programfag'>Internasjonal engelsk, muntlig</option>
+      <option class='add-fag' id='sso' value='1' type='programfag'>Spansk nivå III, skriftlig</option>
+      <option class='add-fag' id='sso' value='0' type='programfag'>Spansk nivå III, muntlig</option>
+      <option class='add-fag' id='sso' value='0' type='programfag'>Samfunnsøkonomi 1</option>
+      <option class='add-fag' id='sso' value='0' type='programfag'>Samfunnsøkonomi 2</option>
+      <option class='add-fag' id='sso' value='0' type='programfag'>Historie og filosofi 1</option>
+      <option class='add-fag' id='sso' value='0' type='programfag'>Historie og filosofi 2</option>
+    </select>
+  </div>
 
-    <div class='realfag-sel'>
-      <p>Realfag</p>
-      <select class='fag-selection-realfag' id='realfag' name='Legg til fag'>
-        <option disabled selected>Velg fag</option>
-        <option class='add-fag' id='realfag' value='0.5' type='programfag'>Matematikk S1</option>
+  <div class='realfag-sel'>
+    <p>Realfag</p>
+    <select class='fag-selection-realfag' id='realfag' name='Legg til fag'>
+      <option disabled selected>Velg fag</option>
+      <option class='add-fag' id='realfag' value='0.5' type='programfag'>Matematikk S1</option>
         <option class='add-fag' id='realfag' value='0.5' type='programfag'>Matematikk S2</option>
         <option class='add-fag' id='realfag' value='0.5' type='programfag'>Matematikk R1</option>
         <option class='add-fag' id='realfag' value='1' type='programfag'>Matematikk R2</option>
@@ -176,65 +176,61 @@
         <option class='add-fag' id='realfag' value='0.5' type='programfag'>Biologi 1</option>
         <option class='add-fag' id='realfag' value='0.5' type='programfag'>Biologi 2</option>
         <option class='add-fag' id='realfag' value='0.5' type='programfag'>Geofag 1</option>
-        <option class='add-fag' id='realfag' value='0.5' type='programfag'>Geofag 2</option>   
+        <option class='add-fag' id='realfag' value='0.5' type='programfag'>Geofag 2</option>
         <option class='add-fag' id='realfag' value='0.5' type='programfag'>Informasjonsteknologi 1</option>
         <option class='add-fag' id='realfag' value='0.5' type='programfag'>InformasjonsTeknologi 2</option>
         <option class='add-fag' id='realfag' value='0.5' type='programfag'>Teknologi og forskningslære 1</option>
         <option class='add-fag' id='realfag' value='0.5' type='programfag'>Teknologi og forskningslære 2</option>
-      </select>
-    </div>
-
-    <div class='fellesfag-sel'>
-      <p>Fellesfag</p>
-      <select class='fag-selection-fellesfag' id='fellesfag' name='Legg til fag'>
-        <option disabled selected>Velg fag</option>
-      </select>
-    </div>
-  </div>
-
-  <div class='alderspoeng-div'>
-    <h2>Når er du født?</h2>
-    <select class='alderspoeng-sel'>
-      <option class='alderspoeng-opt' value='0'>2000</option>
-      <option class='alderspoeng-opt' value='0'>1999</option>
-      <option class='alderspoeng-opt' value='2'>1998</option>
-      <option class='alderspoeng-opt' value='4'>1997</option>
-      <option class='alderspoeng-opt' value='4'>1996</option>
-      <option class='alderspoeng-opt' value='4'>1995</option>
     </select>
   </div>
 
-  <div class='checkbox-tilleggspoeng'>
-    <h2>Tilleggspoeng</h2>
-    <input type='checkbox' class='regular-checkbox' value='2'/>Gjennomført førstegangsteneste <br>
-    <input type='checkbox' class='regular-checkbox' value='2'/>Godkjent år på folkehøgskole<br>
-    <input type='checkbox' class='regular-checkbox' value='2'/>60 studiepoeng fra høyere utdanning<br>
-    <input type='checkbox' class='regular-checkbox' value='1'/>30-59 studiepoeng fra høyere utdanning<br>
+  <div class='fellesfag-sel'>
+    <p>Fellesfag</p>
+    <select class='fag-selection-fellesfag' id='fellesfag' name='Legg til fag'>
+      <option disabled selected>Velg fag</option>
+    </select>
   </div>
+</div>
 
-  <div class="mobile-average">
-    <div class="mobile-box one">
-      <p id="mobile-text">Førstegangsvitnemål</p>
-      <p class="mobile-fg-vitnemal">0.0</p>
-    </div>
-    <div class="mobile-box two">
-      <p id="mobile-text">Ordinært vitnemål</p>
-      <p class="mobile-konkurransePoeng">0.0</p>
-    </div>
+<div class='alderspoeng-div'>
+  <h2>Når er du født?</h2>
+  <select class='alderspoeng-sel'>
+    <option class='alderspoeng-opt' value='0'>2000</option>
+    <option class='alderspoeng-opt' value='0'>1999</option>
+    <option class='alderspoeng-opt' value='2'>1998</option>
+    <option class='alderspoeng-opt' value='4'>1997</option>
+    <option class='alderspoeng-opt' value='4'>1996</option>
+    <option class='alderspoeng-opt' value='4'>1995</option>
+  </select>
+</div>
+
+<div class='checkbox-tilleggspoeng'>
+  <h2>Tilleggspoeng</h2>
+  <input type='checkbox' class='regular-checkbox' value='2'/>Gjennomført førstegangsteneste <br>
+  <input type='checkbox' class='regular-checkbox' value='2'/>Godkjent år på folkehøgskole<br>
+  <input type='checkbox' class='regular-checkbox' value='2'/>60 studiepoeng fra høyere utdanning<br>
+  <input type='checkbox' class='regular-checkbox' value='1'/>30-59 studiepoeng fra høyere utdanning<br>
+</div>
+
+<div class="mobile-average">
+  <div class="mobile-box one">
+    <p id="mobile-text">Førstegangsvitnemål</p>
+    <p class="mobile-fg-vitnemal">0.0</p>
   </div>
+  <div class="mobile-box two">
+    <p id="mobile-text">Ordinært vitnemål</p>
+    <p class="mobile-konkurransePoeng">0.0</p>
+  </div>
+</div>
 
 
 
-  <footer>
-    <p>Made by Eirik Steira</p>
-    <p class="til-toppen">Til toppen</p>
-  </footer>
+<footer>
+  <p>Made by Eirik Steira</p>
+  <p class="til-toppen">Til toppen</p>
+</footer>
 
-
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-      crossorigin="anonymous"></script>
-  <script data-main="javascript/main.js" src="javascript/require.js"></script>
+<script data-main="javascript/main.js" src="javascript/require.js"></script>
 </body>
 
 </html>
