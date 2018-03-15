@@ -112,7 +112,7 @@ require(['jquery'], function($) {
 
   App.tilleggspoeng = function() {
   // adds points from tilleggspoeng checkbox
-  App.tilleggspoeng += Number(this.val());
+  App.tilleggspoeng += Number($(this).val());
 
   if ($('.checkbox-tilleggspoeng input[type=checkbox]:checked').length > 1) {
     App.tilleggspoeng = 2;
