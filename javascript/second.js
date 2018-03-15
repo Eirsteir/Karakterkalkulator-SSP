@@ -88,5 +88,5 @@ require(['jquery', 'app'], function($, App) {
     $('html, body').animate(topOfPage, 1000);
   })
 
-};
+});
 
