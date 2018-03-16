@@ -1,6 +1,8 @@
 # Karakterkakulator
 (Norwegian GPA-calculator)
 
+[![codebeat badge](https://codebeat.co/badges/b1dba8c9-1c57-491f-a771-bb3917439d44)](https://codebeat.co/projects/github-com-steinbra99-steinbra99-github-io-master)
+
 
 A calculator for high school students in Norway to calculate their average, points etc.
 
