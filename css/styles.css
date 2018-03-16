@@ -18,14 +18,20 @@ body {
   border-bottom: 1px solid #5FD3D4;
 }
 
+.icon-kk {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 .title {
   position: absolute;
-  top: 30%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-bottom: 1px solid #5FD3D4;
-  width: 40%;
+  border-top: 1px solid #5FD3D4;
+  width: 50%;
   padding-bottom: 10px;
   text-align: center;
   font-size: 6vw;
@@ -35,7 +41,7 @@ body {
 
 .intro {
   position: absolute;
-  top: 48%;
+  top: 62.5%;
   left: 25%;
   transform: translate(-50%, -50%);
   width: 50%;
@@ -77,25 +83,26 @@ ul {
   list-style: none;
   display: flex;
   justify-content: space-between;
-  margin-top: 1em;
+  margin-top: 4vw;
+  margin-bottom: 4vw;
   text-align: center;
-  padding: 1em 1.25em;
-  width:
+  padding: 0 1.5vw; // **
 }
 
 li {
   display: inline;
   cursor: pointer;
-  height: 100%;
-  width: 20px;
+  /* height: 100%;
+  width: 20px; */
   border-radius: 100%;
   background-color: #214f73;
   color: #fff;
   text-align: center;
   margin-right: 2px;
-  padding-top: 3px;
+  padding: 0 0.5vw;
   transition-duration: 0.3s;
   border: none;
+  font-size: 1.5vw;
 }
 
 li:hover {
@@ -104,6 +111,7 @@ li:hover {
 
 .active-fag {
   padding-left: 20px;
+  font-size: 3vw;
 
 }
 
@@ -350,11 +358,11 @@ option {
 
   .title {
     position: absolute;
-    top: 32.25vh;
+    /* top: 32.25vh; */
     left: 50%;
     transform: translate(-50%, -50%);
-    border-bottom: 1px solid #5FD3D4;
-    width: 57%;
+    padding-bottom: 0;
+    width: 75%;
     padding-bottom: 15px;
     text-align: center;
     font-size: 9vw;
@@ -363,7 +371,7 @@ option {
 
   .intro {
     position: absolute;
-    top: 40.5%;
+    top: 55%;
     left: 25%;
     transform: translate(-50%, -50%);
     width: 50%;
@@ -379,10 +387,10 @@ option {
     left: 50%;
   }
 
+
   li {
-    height: 1.25vw;
-    width: 3vw;
-    padding-bottom: 2.5vw;
+    padding: 0 0.5vw;
+    font-size: 2.8vw;
   }
 
   #average-view {
@@ -405,7 +413,6 @@ option {
 
   .sso-sel {
     width: 100%;
-
   }
 
   .fag-selection-sso, .fag-selection-realfag, .fag-selection-fellesfag {
@@ -437,7 +444,7 @@ option {
     z-index: 1;
     height: 18%;
     color: #fff;
-    box-shadow: 0px 8px 16px 16px rgba(0,0,0,0.15);
+    box-shadow: 0px 8px 16px 16px rgba(0,0,0,0.2);
   }
 
   .mobile-box {
@@ -485,4 +492,3 @@ option {
   }
 
 }
-
