@@ -27,7 +27,9 @@
 
     if (App.$Tpoeng > 2) {
       App.$Tpoeng = 2;
-    }
+    } else if (totalPoeng > 4) {
+      totalPoeng = 4;
+    }// else if (totalPoeng + App.$Apoeng + App.Tpoeng > 8) { finn ut begrensinngen
 
     let konkurransePoeng = fgVitnemal + App.$Apoeng + App.$Tpoeng;
 
@@ -41,37 +43,26 @@
     // For smaller devices
     if ($(window).innerWidth() < 850) {
       $('.mobile-fg-vitnemal').replaceWith('<p class="mobile-fg-vitnemal">' + fgVitnemal.toFixed(1) + '</p>');
-      $('.mobile-konkurransePoeng').replaceWith('<p class="mobile-konkurransePoeng">' + konkurransePoeng + '</p>');
+      $('.mobile-konkurransePoeng').replaceWith('<p class="mobile-konkurransePoeng">' + konkurransePoeng.toFixed(1) + '</p>');
       }
   };
 
   App.grade = function() {
-    $(this).toggleClass('grade-active');
-    $(this).siblings().removeClass('grade-active');
-    let gradeString = $(this).val();
-    let parent = $(this).parentsUntil('tr').prev();
+    let $currentGrade = $(this)
+    let $currentFag = ($(this)).parent().parent().parent()[0].children[0];
+    let $fagPoeng = Number($currentFag.attributes.value.value);
+    $currentGrade.toggleClass('grade-active');
+    $currentGrade.siblings().removeClass('grade-active');
 
-    let currentFag = parent[0].innerHTML;
-    let fagPoeng = Number(parent[0].attributes.value.value);
-
-    App.fag[currentFag] = gradeString;
-    App.poeng[currentFag] = fagPoeng;
+    if ($(this).parent()[0].attributes[0].value === 'eksamen') {
+      App.fag[$currentFag.innerHTML + '-eksamen'] = $currentGrade.val();
+    } else {
+      App.fag[$currentFag.innerHTML] = $currentGrade.val();
+      App.poeng[$currentFag.innerHTML] = $fagPoeng;
+    }
 
     App.vitnemal()
   }
-
-  App.eksamensGrade = function() {
-
-    let eksamenString = $(this).val();
-    let parent = $(this).parentsUntil('tr').prev().prev();
-    let currentEksamensFag = parent[0].innerHTML;
-    $(this).toggleClass('grade-active');
-    $(this).siblings().removeClass('grade-active');
-
-    App.fag[currentEksamensFag + '-eksamen'] = eksamenString;
-
-    App.vitnemal();
-  };
 
   App.selectors = function() {
     // Adds new fag from selector -fellesfag
@@ -90,12 +81,11 @@
   };
 
   App.button = function() {
-    // clicks both at the same time
     let $currentFag = $(this).parents('.divTableCell').siblings();
     let $currentFagID = $currentFag[0].attributes[1].value;
 
-    $(this).addClass('fa-spin');
-    $currentFag.parent().fadeOut(); //remove from DOM?
+    $(this).children().addClass('fa-spin');
+    $currentFag.parent().fadeOut();
 
     if ($currentFag !== $('.fag-selection-' + $currentFagID).text()) {
       let $fagValue = $currentFag.siblings()[0].attributes[2].value; // fagvalue
@@ -107,23 +97,23 @@
   };
 
   App.alderspoeng = function() {
-    App.$alderspoeng = Number(($('.alderspoeng-sel>option:selected').val()));
+    App.$Apoeng = Number(($('.alderspoeng-sel>option:selected').val()));
 
     App.vitnemal();
 
-    return App.$alderspoeng;
+    return App.$Apoeng;
   };
 
   App.tilleggspoeng = function() {
     // adds points from tilleggspoeng checkbox
-    App.$tilleggspoeng += Number($(this).val());
+    App.$Tpoeng += Number($(this).val());
 
     if ($('.checkbox-tilleggspoeng input[type=checkbox]:checked').length > 1) {
-      App.$tilleggspoeng = 2;
+      App.$Tpoeng = 2;
     } else if ($('.checkbox-tilleggspoeng input[type=checkbox]:checked').length === 1) {
-      App.$tilleggspoeng = Number($('.checkbox-tilleggspoeng input[type=checkbox]:checked')[0].defaultValue); // get the value of the one currently ckecked
+      App.$Tpoeng = Number($('.checkbox-tilleggspoeng input[type=checkbox]:checked')[0].defaultValue); // get the value of the one currently ckecked
     } else {
-      App.$tilleggspoeng = 0;
+      App.$Tpoeng = 0;
     }
 
     App.vitnemal();
@@ -132,23 +122,24 @@
 
 var main = function() {
   // jQuery
-  App.$grade = $('.grade').children();
-  App.$eksamen = $('.eksamen').children();
+  App.$tables = $('.divTable');
   App.$removeBtn = $('.remove-btn').children();
   App.$select = $('.select');
   App.$alderspoeng = $('.alderspoeng-sel');
   App.$tilleggspoeng = $('.checkbox-tilleggspoeng').children();
 
-  App.$grade.on('click', App.grade)
-  App.$eksamen.on('click', App.eksamensGrade)
+
+  // grade-buttons
+  App.$tables.on('click', 'li', App.grade)
   // Adds new fag from selector -fellesfag
   App.$select.on('change', App.selectors)
-  // clicks both at the same time
-  App.$removeBtn.on('click', App.button);
+  // removes fag
+  App.$tables.on('click', 'i', App.button)
   // Adds alderspoeng
   App.$alderspoeng.on('change', App.alderspoeng)
   // adds points from tilleggspoeng checkbox
   App.$tilleggspoeng.on('change', App.tilleggspoeng)
+
 }
 
 $(document).ready(main);
