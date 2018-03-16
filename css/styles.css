@@ -49,6 +49,7 @@ body {
   text-align: center;
   font-weight: 400;
   font-size: 2vw;
+
 }
 
 .arrow {
@@ -57,6 +58,10 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0.7;
+  cursor: pointer;
+}
+
+.promise {
   cursor: pointer;
 }
 
@@ -76,7 +81,6 @@ footer {
   visibility: visible;
   font-size: 1.5vw
 }
-
 
 ul {
   list-style: none;
@@ -129,6 +133,7 @@ li:hover {
   width: 100%;
   padding: 0;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 .div-fellesfag, .div-programfag {
@@ -169,6 +174,7 @@ li:hover {
   border-bottom: 1.5px solid #67cee5;
   border-collapse: collapse;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 /*  */
@@ -307,6 +313,7 @@ option {
   background-color: #fff;
   border: 1px solid #67cee5;
   box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
   padding: 7px;
   border-radius: 3px;
   display: inline-block;
@@ -317,12 +324,14 @@ option {
 
 .regular-checkbox:active, .regular-checkbox:checked:active {
 	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
 }
 
 .regular-checkbox:checked {
 	background-color: #214f73;
 	border: 1px solid #adb8c0;
 	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
 	color: #214f73;
 }
 
@@ -444,6 +453,7 @@ option {
     height: 18%;
     color: #fff;
     box-shadow: 0px 8px 16px 16px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0px 8px 16px 16px rgba(0,0,0,0.2);
   }
 
   .mobile-box {
