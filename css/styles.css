@@ -49,7 +49,6 @@ body {
   text-align: center;
   font-weight: 400;
   font-size: 2vw;
-
 }
 
 .arrow {
@@ -111,7 +110,7 @@ li:hover {
 
 .active-fag {
   padding-left: 20px;
-  font-size: 3vw;
+  font-size: 1.75vw;
 
 }
 
