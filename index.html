@@ -8,7 +8,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
   <meta name="Description" content="En ny og enkel karakterkalkulator for å regne ut snitt og poeng studispesialiserende retning. Veien til videre studier"/>
-  <meta name="keywords" content="karakterkalkulator" />
   
   <meta property="og:type" content="school" />
   <meta property="og:site_name" content="Karakterkalkulatorssp.com" />
@@ -23,7 +22,27 @@
   <link rel="apple-touch-icon" type="image/png" href="images/apple-touch-icon.png">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,900" rel="stylesheet">
   
-  
+  <script type="application/ld+json">
+    {
+    "@context": "http://schema.org.",
+    "@type": "WebApplication",
+    "name": "Karakterkalkulator",
+    "url": "https://karakterkalkulatorssp.com/",
+    "description": "Regn ut snitt og poeng i denne nye og enkle karakterkalkulator for studispesialiserende retning. Veien til videre studier",
+    "applicationCategory": "MultiMedia",
+    "genre": "Education",
+    "about": {
+      "@type": "Thing",
+      "keywords": "Gjennomsnitt, Språk- og realfagspoeng, Førstegangsvitnemål, Alderspoeng, Tilleggspoeng, Ordinært vitnemål"
+    },
+    "audience": "EducationalAudience",
+    "language": "no",
+    "microlanguage": "nb",
+    "browserRequirements": "Requires JavaScript. Requires HTML5.",
+    "softwareVersion": "1.0.0",
+    "operatingSystem": "All"
+  }
+  </script>
   <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
   <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.3.1/scrollreveal.min.js"></script>
   <script>
@@ -159,7 +178,8 @@
   <div class='sso-sel'>
     <!-- <h4>SSØ</h4> -->
     <p>Språk, samfunnsfag og økonomi</p>
-    <select class='fag-selection-sso select' id="sso" name='Legg til fag'>
+    <label for="sso">Legg til fag</label>
+    <select class='fag-selection-sso select' id="sso" name='realfag' value="sso">
       <option disabled selected>Velg fag</option>
       <option class='add-fag' id='sso' value='0' type='programfag'>Rettslære 1</option>
       <option class='add-fag' id='sso' value='0' type='programfag'>Rettslære 2</option>
@@ -178,7 +198,8 @@
 
   <div class='realfag-sel'>
     <p>Realfag</p>
-    <select class='fag-selection-realfag select' id='realfag' name='Legg til fag'>
+    <label for="realfag">Legg til fag</label>
+    <select class='fag-selection-realfag select' id='realfag' name='realfag' value="realfag">
       <option disabled selected>Velg fag</option>
       <option class='add-fag' id='realfag' value='0.5' type='programfag'>Matematikk S1</option>
         <option class='add-fag' id='realfag' value='0.5' type='programfag'>Matematikk S2</option>
@@ -201,7 +222,8 @@
 
   <div class='fellesfag-sel'>
     <p>Fellesfag</p>
-    <select class='fag-selection-fellesfag select' id='fellesfag' name='Legg til fag'>
+    <label for="fellesfag">Legg til fag</label>
+    <select class='fag-selection-fellesfag select' id='fellesfag' name='fellesfag'>
       <option disabled selected>Velg fag</option>
     </select>
   </div>
@@ -209,7 +231,8 @@
 
 <div class='alderspoeng-div'>
   <h2>Når er du født?</h2>
-  <select class='alderspoeng-sel'>
+  <label for="alderspoeng">Legg til fag</label>
+  <select class='alderspoeng-sel' value="alderspoeng">
     <option class='alderspoeng-opt' value='0'>2000</option>
     <option class='alderspoeng-opt' value='0'>1999</option>
     <option class='alderspoeng-opt' value='2'>1998</option>
@@ -246,7 +269,6 @@
 
 
 <footer>
-  <p class="promise">Made by Eirik Steira</p>
   <p class="til-toppen">Til toppen</p>
 </footer>
 
