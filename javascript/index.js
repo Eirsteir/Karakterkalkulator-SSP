@@ -85,10 +85,10 @@ var second = function() {
 
   // functions/event handlers
   App.vitnemal = function() {
-    let total = 0;
-    let average = 0;
-    let fgVitnemal = 0;
-    let totalPoeng = 0;
+    var total = 0;
+    var average = 0;
+    var fgVitnemal = 0;
+    var totalPoeng = 0;
     for (let enkeltFag in App.fag) {
       total += App.fag[enkeltFag];
       average = ((total / Object.keys(App.fag).length));
