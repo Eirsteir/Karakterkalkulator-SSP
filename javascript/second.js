@@ -62,7 +62,7 @@ var second = function() {
   })
 
   var topOfPage = {
-    scrollTop: $(".div-fellesfag").offset().top - 20
+    scrollTop: $("#div-descriptions").offset().top - 20
   }
 
   $('.arrow').on('click', function() {
