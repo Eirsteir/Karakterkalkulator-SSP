@@ -118,14 +118,12 @@ ul {
   margin-top: 4vw;
   margin-bottom: 4vw;
   text-align: center;
-  padding: 0 1.5vw; // **
+  padding: 0 1.5vw; 
 }
 
 li {
   display: inline;
   cursor: pointer;
-  /* height: 100%;
-  width: 20px; */
   border-radius: 100%;
   background-color: #214f73;
   color: #fff;
