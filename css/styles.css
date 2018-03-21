@@ -231,14 +231,6 @@ li:hover {
   opacity: 0.6;
 }
 
-.grade-active {
-  background-color: #67cee5;
-}
-
-.eksamen-active {
-  visibility: visible;
-}
-
 /* Average-view table */
 #table-avg, .fg-vitnemal, .gj-snitt, .tilleggspoeng, .konkurransePoeng {
   border-bottom: 1.5px solid #67cee5;
