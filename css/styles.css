@@ -27,7 +27,7 @@ html {
 
 .title {
   position: absolute;
-  top: 50%;
+  top: 53%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
@@ -43,7 +43,7 @@ html {
 
 .intro {
   position: absolute;
-  top: 62.5%;
+  top: 65.5%;
   left: 25%;
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
