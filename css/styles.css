@@ -153,10 +153,13 @@ li:hover {
   background-color: #67cee5;
 }
 
+.grade-active {
+  background-color: #67cee5;
+}
+
 .active-fag {
   padding-left: 20px;
   font-size: 1.75vw;
-
 }
 
 #average-view {
