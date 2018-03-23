@@ -168,6 +168,7 @@ li{
     display:table-row-group;
     border-bottom:1.5px solid #67cee5;
     border-collapse:collapse;
+    border-radius: 1px;
     -webkit-appearance: none;
     box-shadow:0px 8px 16px rgba(0,0,0,0.2);
     -webkit-box-shadow:1px 8px 16px rgba(0,0,0,0.2);
