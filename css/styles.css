@@ -71,6 +71,26 @@ html {
   padding-top: 1em;
   font-size: 1.5vw;
 }
+#logg_inn_dropdown #email {
+  margin-left: 5%;
+}
+button {
+  font-size: 0.75em;
+  display: inline;
+  background-color: #0091E1;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #0078BA;
+}
+#logg_inn_dropdown div {
+  margin: 1em auto;
+  margin-left: 16%;
+  font-size: 1em;
+}
 .hide {
   display: none;
 }
