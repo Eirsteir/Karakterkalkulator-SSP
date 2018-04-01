@@ -189,6 +189,9 @@ footer {
 footer a {
   text-decoration: none;
   color: #0091E1;
+  display: block;
+  padding: 0.5%;
+  font-size: 1.2vw;
 }
 
 ul {
