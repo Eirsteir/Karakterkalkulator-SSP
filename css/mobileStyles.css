@@ -419,6 +419,8 @@ footer, a, .til-toppen {
 footer a {
   text-decoration: none;
   color: #0091E1;
+  display: block;
+  padding-bottom: 1%;
 }
 .til-toppen{
     visibility:visible;
