@@ -324,7 +324,7 @@ option{
     color:#214f73
 }
 .regular-checkbox:checked:after{
-    content:'/2714';
+    content:'\2714';
     font-size:14px;
     position:absolute;
     top:-3px;
