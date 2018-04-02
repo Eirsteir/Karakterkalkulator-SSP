@@ -67,6 +67,8 @@
    "inLanguage": "Norwegian"
    }
   </script>
+    <!-- HTTPS required. HTTP will give a 403 forbidden response -->
+  <script src="https://sdk.accountkit.com/nb_NO/sdk.js"></script>
 
   <noscript>
   You need to enable JavaScript to run this app.
@@ -82,6 +84,24 @@
     <p class="intro">Studiespesialiserende</p>
     <i class="fas fa-angle-down fa-3x arrow"></i>
   </div>
+      
+    <nav id='navbar'>
+    <ul id='nav_links'>
+      <li class='nav-list-item' id='logg_inn' ><p>Logg inn</p></li>
+      <li class='nav-list-item' id='om'><p>Om</p></li>
+    </ul>
+    <div class='hide' id='logg_inn_dropdown'>
+      <input value="+47" id="country_code" />
+      <input placeholder="phone number" id="phone_number"/>
+      <button onclick="smsLogin();">Logg inn via SMS</button>
+      <div>OR</div>
+      <input placeholder="email" id="email"/>
+      <button onclick="emailLogin();" id='email_btn'>Loggg inn via Email</button>
+    </div>
+    <div class='hide' id='om_dropdown'>
+      <p>Karakterkalkulator SSP kan du bruke til å finne ut hva du vil få i gjennomsnitt, både førstegangsvitnemål og andregangsvitnemål (ordinær kvote). <br /> Legg til foreløpige standpunktkarakterer eller legg inn det du fikk forrige semester.</p>
+    </div>
+  </nav>
 
   <div id="div-descriptions">
     <div class="page-description">
@@ -272,6 +292,76 @@
   <p class="til-toppen">Til toppen</p>
   <a href='index.html'>Gå til desktop-versjon</a>
 </footer>
+
+  
+<script>
+  // initialize Account Kit with CSRF protection
+  AccountKit_OnInteractive = function(){
+    AccountKit.init(
+      {
+        appId:"424474931295428",
+        state:"jlfakfmn",
+        version:"v1.0",
+        fbAppEventsEnabled:true,
+        redirect:"https://karakterkalkulatorssp.com/login_sucess.html",
+        debug: true
+      }
+    );
+  };
+
+  // login callback
+  function loginCallback(response) {
+    if (response.status === "PARTIALLY_AUTHENTICATED") {
+      var code = response.code;
+      var csrf = response.state;
+      // Send code to server to exchange for access token
+    }
+    else if (response.status === "NOT_AUTHENTICATED") {
+      // handle authentication failure
+    }
+    else if (response.status === "BAD_PARAMS") {
+      // handle bad parameters
+    }
+  }
+
+  // phone form submission handler
+  function smsLogin() {
+    var countryCode = document.getElementById("country_code").value;
+    var phoneNumber = document.getElementById("phone_number").value;
+    AccountKit.login(
+      'PHONE',
+      {countryCode: countryCode, phoneNumber: phoneNumber}, // will use default values if not specified
+      loginCallback
+    );
+  }
+
+
+  // email form submission handler
+  function emailLogin() {
+    var emailAddress = document.getElementById("email").value;
+    AccountKit.login(
+      'EMAIL',
+      {emailAddress: emailAddress},
+      loginCallback
+    );
+  }
+</script>
+
+
+<form id="login_success" method="post" action="dist/login_success">
+<input id="csrf" type="hidden" name="csrf" />
+<input id="code" type="hidden" name="code" />
+</form>
+
+<script>
+function loginCallback(response) {
+  if (response.status === "PARTIALLY_AUTHENTICATED") {
+    document.getElementById("code").value = response.code;
+    document.getElementById("csrf").value = response.state;
+    document.getElementById("login_success").submit();
+  }
+}
+</script>
 
 
 <script data-cfasync="false" src="https://code.jquery.com/jquery-3.2.1.min.js"
