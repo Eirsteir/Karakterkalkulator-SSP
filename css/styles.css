@@ -77,8 +77,6 @@ html {
  #logg_inn_dropdown {
   padding-top: 1em;
   font-size: 1.5vw;
-  border-top: 1px solid #5FD3D4;
-
 }
 #logg_inn_dropdown #email {
   margin-left: 5%;
@@ -103,8 +101,6 @@ button:hover {
 #om_dropdown p {
   width: 50%;
   line-height: 1.75em;
-  border-top: 1px solid #5FD3D4;
-
 }
 .hide {
   display: none;
