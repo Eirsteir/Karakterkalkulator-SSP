@@ -90,16 +90,25 @@ html{
   color: black;
 }
  #logg_inn_dropdown {
+  margin-top: 3%;
   padding: 5%;
   font-size: 1.5vw;
   border-top: 1px solid #5FD3D4;
-
+  width: 100%;
+}
+#country_code  {
+  width: 10%;
+  margin-left: 20%;
 }
 #logg_inn_dropdown #email {
-  margin-left: 5%;
+  margin-left: 23%;
+}
+#email_btn {
+  margin-left: 25.5%;
 }
 button {
-  font-size: 0.75em;
+  font-size: 2.5em;
+  margin: 1em 28%;
   display: inline;
   background-color: #0091E1;
   color: white;
@@ -111,9 +120,8 @@ button:hover {
   background-color: #0078BA;
 }
 #logg_inn_dropdown div {
-  margin: 1em auto;
-  margin-left: 16%;
-  font-size: 0.5em;
+  margin: 0 35% 0.5em 43%;
+  font-size: 4em;
 }
 #om_dropdown p {
   width: 90%;
@@ -125,6 +133,7 @@ button:hover {
 .hide {
   display: none;
 }
+
 #div-descriptions{
   visibility:visible;
   margin-left:0;
