@@ -1,8 +1,11 @@
 # Karakterkakulator
 
 
+[![codebeat badge](https://codebeat.co/badges/b1dba8c9-1c57-491f-a771-bb3917439d44)](https://codebeat.co/projects/github-com-steinbra99-steinbra99-github-io-master)
+
 
 (Norwegian GPA-calculator)
+
 
 https://karakterkalkulatorssp.com/
 
